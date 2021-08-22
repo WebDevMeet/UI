@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>MCP Online</title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+        *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Poppins', sans-serif;
+        } 
+        nav{
+          display: flex;
+          height: 80px;
+          width: 100%;
+          background: -webkit-linear-gradient(360deg, #b6eae1 10%, #D2FBAD 360%); /* Chrome 10+, Saf5.1+ */ background: -moz-linear-gradient(360deg, #b6eae1 10%, #D2FBAD 360%); /* FF3.6+ */ background: linear-gradient(360deg, #b6eae1 10%, #D2FBAD 360%); /* W3C */ 
+          align-items: center;
+          color: black;
+          justify-content: space-between;
+          padding: 0 50px 0 100px;
+          flex-wrap: wrap;
+          border-bottom: 1px solid mintcream;
+        }
+        nav .logo{
+          color: black;
+          font-size: 35px;
+          font-weight: 600;
+        }
+        
+        nav ul{
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+          }
+          nav ul li{
+            margin: 0 5px;
+          }
+          nav ul li a{
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 5px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+          }
+          nav ul li a.active,
+          nav ul li a:hover{
+            color: #111;
+            background: #fff;
+          }
+          nav .menu-btn i{
+            color: #fff;
+            font-size: 22px;
+            cursor: pointer;
+            display: none;
+          }
+          input[type="checkbox"]{
+            display: none;
+          }
+          @media (max-width: 1000px){
+            nav{
+              padding: 0 40px 0 50px;
+            }
+          }
+          @media (max-width: 920px) {
+            nav .menu-btn i{
+              display: block;
+            }
+            #click:checked ~ .menu-btn i:before{
+              content: "\f00d";
+            }
+            nav ul{
+              position: fixed;
+              top: 80px;
+              left: -100%;
+              background: -webkit-linear-gradient(360deg, #b6eae1 10%, #D2FBAD 360%); /* Chrome 10+, Saf5.1+ */ background: -moz-linear-gradient(360deg, #b6eae1 10%, #D2FBAD 360%); /* FF3.6+ */ background: linear-gradient(360deg, #b6eae1 10%, #D2FBAD 360%); /* W3C */ 
+              color: black;
+              height: 100vh;
+              width: 100%;
+              text-align: center;
+              display: block;
+              transition: all 0.3s ease;
+            }
+            #click:checked ~ ul{
+              left: 0;
+            }
+            nav ul li{
+              width: 100%;
+              margin: 40px 0;
+            }
+            nav ul li a{
+              width: 100%;
+              margin-left: -100%;
+              display: block;
+              font-size: 20px;
+              transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+            #click:checked ~ ul li a{
+              margin-left: 0px;
+            }
+            nav ul li a.active,
+            nav ul li a:hover{
+              background: none;
+              color: blue;
+            }
+          }
+          .content{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: -1;
+            width: 100%;
+            padding: 0 30px;
+            align-items: center;
+            height: 100vh;
+            padding-top: 250px;
+            color: #1b1b1b;
+            
+          }
+          .content .one{
+            font-size: 40px;
+            font-weight: 700;
+            font-weight: bolder;
+          }
+        
+          .normal{
+            font-size: 25px;
+            font-weight: 400;
+            margin-top: 30px;
+            margin-bottom: 50px;
+            
+            
+          }
+        
+          .explore{
+            padding: 20px 30px;
+            margin-top: 20px;
+            border-radius: 130px;
+            border: 3px solid deepskyblue;
+            font-weight: bold;
+            font-size: 17px;
+            margin-bottom: 150px;
+        
+            align-items: center;
+            
+            
+          }
+        
+          .explore:hover{
+            background: white;
+            color: black;
+            transition: all 0.4s ease;
+            cursor: pointer;
+          }
+        
+          /* .border{
+            border-top: 3px solid skyblue;
+          } */
+        
+          .two{
+            margin-top: 60px;
+          }
+        
+          .footer{
+            font-size: 30px;
+            background: -webkit-linear-gradient(360deg, #b6eae1 10%, #D2FBAD 360%); /* Chrome 10+, Saf5.1+ */ background: -moz-linear-gradient(360deg, #b6eae1 10%, #D2FBAD 360%); /* FF3.6+ */ background: linear-gradient(360deg, #b6eae1 10%, #D2FBAD 360%); /* W3C */ 
+            position: relative;
+            border-radius: 1000px;
+            font-weight: bold;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            padding-top: 30px;
+            
+            
+          }
+        
+          .bottom{
+            margin-bottom: 100px;
+          }
+
+          .images{
+              width: 100px;
+              margin-bottom: 30px;
+          }
+          
+        </style>
+
+
+      <nav>
+         <div class="logo">
+            MCP 
+         </div>
+         <input type="checkbox" id="click">
+         <label for="click" class="menu-btn">
+         <i class="fas fa-bars"></i>
+         </label>
+         <ul>
+            <li><a class="active" href="./index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="our-apps.html">Our Apps</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+         </ul>
+      </nav>
+      <div class="content">
+        
+        <img class="images" src="./search (2).png" alt="">
+        <div class="one">Name</div>
+        <div>
+            <div class="normal">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam blanditiis autem quaerat, reiciendis soluta nemo ullam velit aut aperiam voluptatibus atque, exercitationem, sed deleniti consequuntur! Enim cum cupiditate et itaque!
+            </div>
+          <a href="#">
+            <button class="explore">
+              Hire Me
+            </button>
+          </a>
+          </div>
+
+          <img class="images" src="./search (2).png" alt="">
+        <div class="one">Name</div>
+        <div>
+            <div class="normal">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam blanditiis autem quaerat, reiciendis soluta nemo ullam velit aut aperiam voluptatibus atque, exercitationem, sed deleniti consequuntur! Enim cum cupiditate et itaque!
+            </div>
+          <a href="#">
+            <button class="explore">
+              Hire Me
+            </button>
+          </a>
+
+          </div>
+
+          <img class="images" src="./search (2).png" alt="">
+        <div class="one">Name</div>
+        <div>
+            <div class="normal">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam blanditiis autem quaerat, reiciendis soluta nemo ullam velit aut aperiam voluptatibus atque, exercitationem, sed deleniti consequuntur! Enim cum cupiditate et itaque!
+            </div>
+          <a href="#">
+            <button class="explore">
+              Hire Me
+            </button>
+          </a>
+          
+        </div>
+        <div class="footer">
+          By MCP Labs 2021 
+        </div>
+      </div>
+
+      
+
+      
+
+   </body>
+</html>
+

@@ -1,0 +1,54 @@
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidenav{
+    background: #0108Ed;
+    color: #fff;
+    position: fixed;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background: #042331;
+}
+
+.sidenav header{
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    line-height: 70px;
+    background: #063146;
+    user-select: none;
+}
+
+.sidenav ul a{
+    display: block;
+    height: 50px;
+    width: 100%;
+    font-size: 20px;
+    color: white;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    
+}
+
+li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidenav img{
+    width: 26px;
+    margin-top: 10px;
+}
+
+.text{
+   display: flex; 
+   align-items: center;
+   justify-content: center;
+}
